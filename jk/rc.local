@@ -10,5 +10,5 @@
 # bits.
 #
 # By default this script does nothing.
-/usr/bin/python /root/jk.py
+/usr/bin/python /root/jk/jk.py
 exit 0
