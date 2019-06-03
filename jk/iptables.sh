@@ -1,9 +1,9 @@
 #!/bin/sh
 
-local_ip=""
-s_port=""
-d_port=""
-d_domain=""
+local_ip="10.0.0.4"
+s_port="80"
+d_port="465"
+d_domain="hkt-cna.mailgung.ml"
 
 get_ip=`ping -c 1 $d_domain | grep 'PING' | awk '{print $3}' | sed 's/[(,)]//g'`
 
