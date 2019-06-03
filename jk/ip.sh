@@ -6,7 +6,11 @@ function check_ip() {
         FIELD2=$(echo $IP|cut -d. -f2)
         FIELD3=$(echo $IP|cut -d. -f3)
         FIELD4=$(echo $IP|cut -d. -f4)
-        if [ $FIELD1 -eq 112 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
+        if [ $FIELD1 -eq 42 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
+            echo 1
+        elif [ $FIELD1 -eq 112 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
+            echo 1
+		elif [ $FIELD1 -eq 1 -a $FIELD2 -le 64 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
             echo 1
         else
             echo 0
@@ -20,7 +24,7 @@ for (( i=0; i < 999 ; i++))
 do
 
 IP=$(curl -ks ip.sb)
-test=$(curl -ks http://119.29.214.193:3000/$IP/22 | grep null)
+test=$(curl -ks https://cn-shenzhen-aliyun-tcping.torch.njs.app/$IP/22 | grep null)
 flag=$(check_ip)
 
 if [[ $test =~ "null" ]];then
@@ -39,3 +43,5 @@ rm -rf /var/lib/dhcp/*
 dhclient ens18
 
 done
+
+
