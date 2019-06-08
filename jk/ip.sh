@@ -10,8 +10,6 @@ function check_ip() {
             echo 1
         elif [ $FIELD1 -eq 112 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
             echo 1
-		elif [ $FIELD1 -eq 1 -a $FIELD2 -le 64 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
-            echo 1
         else
             echo 0
         fi
