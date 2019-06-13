@@ -10,6 +10,20 @@ function check_ip() {
             echo 1
         elif [ $FIELD1 -eq 112 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
             echo 1
+        elif [ $FIELD1 -eq 203 -a $FIELD2 -le 218 -a $FIELD3 -le 241 -a $FIELD4 -le 255 ]; then
+            echo 1
+        elif [ $FIELD1 -eq 203 -a $FIELD2 -le 218 -a $FIELD3 -le 253 -a $FIELD4 -le 255 ]; then
+            echo 1
+        elif [ $FIELD1 -eq 203 -a $FIELD2 -le 218 -a $FIELD3 -le 123 -a $FIELD4 -le 255 ]; then
+            echo 1
+        elif [ $FIELD1 -eq 203 -a $FIELD2 -le 218 -a $FIELD3 -le 250 -a $FIELD4 -le 255 ]; then
+            echo 1
+        elif [ $FIELD1 -eq 203 -a $FIELD2 -le 218 -a $FIELD3 -le 133 -a $FIELD4 -le 255 ]; then
+            echo 1
+        elif [ $FIELD1 -eq 203 -a $FIELD2 -le 218 -a $FIELD3 -le 132 -a $FIELD4 -le 255 ]; then
+            echo 1
+        elif [ $FIELD1 -eq 203 -a $FIELD2 -le 218 -a $FIELD3 -le 143 -a $FIELD4 -le 255 ]; then
+            echo 1
         else
             echo 0
         fi
