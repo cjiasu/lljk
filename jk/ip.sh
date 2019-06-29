@@ -6,7 +6,7 @@ function check_ip() {
         FIELD2=$(echo $IP|cut -d. -f2)
         FIELD3=$(echo $IP|cut -d. -f3)
         FIELD4=$(echo $IP|cut -d. -f4)
-        if [ $FIELD1 -eq 42 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
+        if [ $FIELD1 -eq 42 -a $FIELD2 -le 2 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
             echo 1
         elif [ $FIELD1 -eq 112 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
             echo 1
