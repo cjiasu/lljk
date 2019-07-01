@@ -1,3 +1,3 @@
 dhclient -r -v
-rm -f /var/lib/dhcp/*
+rm -rf /var/lib/dhclient/*
 dhclient -v
