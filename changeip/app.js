@@ -31,8 +31,7 @@ var send_message = "喵喵喵，我们的HKT好像又被墙了哈哈哈,嗝\n"+
 "机器编号: "+server_no+"   \n"+
 "机器CNAME: "+server_cname+"  \n"+
 "正在尝试更换ip\n"+
-"（POWER BY 良辰）\n"+
-"https://taoluyun.cc";
+"（POWER BY 良辰）\n";
 //定时器
 
 schedule.scheduleJob('59/3 * * * * *', function (){
