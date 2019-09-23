@@ -11,15 +11,15 @@ const ng_req_headers = {
 };
 
 //************填写TELEGRAM群组id或者username****************
-const group = "-1001215974610";
+const group = "-1001275825838";
 //************填写机器的名称**************
 const server_name = 'HKT-A';
 //************填写机器编号****************
 const server_no = "1";
 //************填写机器CNAME****************
-const server_cname = "hk-cna";
+const server_cname = "hkt-cna";
 //************填写TCP检测端口****************
-const CHECK_PORT = 22;
+const CHECK_PORT = 80;
 //************填写推送内容****************
 var send_message = "我们的"+server_name+"好像又被墙了，嘤嘤嘤\n"+
 "机器名称: "+server_name+"    \n"+
