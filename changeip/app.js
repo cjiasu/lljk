@@ -11,13 +11,13 @@ const ng_req_headers = {
 };
 
 //************填写TELEGRAM群组id或者username****************
-const group = "-1001275825838";
+const group = "-1001215974610";
 //************填写机器的名称**************
-const server_name = 'HKT-G';
+const server_name = 'HKT-A';
 //************填写机器编号****************
-const server_no = "7号";
+const server_no = "1";
 //************填写机器CNAME****************
-const server_cname = "hkt-cng.mailgung.ml";
+const server_cname = "hk-cna";
 //************填写TCP检测端口****************
 const CHECK_PORT = 22;
 //************填写推送内容****************
@@ -95,14 +95,16 @@ function sendMessage(groupid,message){
         console.log("SEND MESSAGE fail: " + e.message);
     });
 }
-function check_ip(){
+function check_ip(num){
     get("http://ipinfo.io",function (res, status, headers) {
         if (status==200) {
             console.log("get_ip:"+JSON.parse(res).ip)
             var data = JSON.parse(res).ip;
             if(data == old_ip){
-                change_new_ip();
-                sendMessage(group, "似乎没更新IP，再尝试一次更换IP");
+                change_new_ip(1);
+				if(num == undefined){
+					sendMessage(group, "似乎没更新IP，正在使劲刷IP");
+				}
             }else{
                 let temp_ip = old_ip;
                 old_ip = data;
@@ -119,14 +121,14 @@ function check_ip(){
         check_ip();
     });
 }
-function change_new_ip(){
+function change_new_ip(num){
     exec(cmdStr, function(err,stdout,stderr){
         if(err) {
             console.log('error:'+stderr);
             sendMessage(group, "更换IP命令执行出错，请检查代码："+e.message);
         } else {
             //验证IP
-            check_ip();
+            check_ip(num);
         }
     });
 }
@@ -218,4 +220,3 @@ function getPath(url){
     var fullPath = url.match(pathPattern);
     return fullPath?fullPath[2]:'/';
 }
-
