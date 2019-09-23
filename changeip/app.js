@@ -17,15 +17,15 @@ const server_name = 'HKT-A';
 //************填写机器编号****************
 const server_no = "1";
 //************填写机器CNAME****************
-const server_cname = "hkt-cna";
+const server_cname = "hkt-cna.mailgung.ml";
 //************填写TCP检测端口****************
 const CHECK_PORT = 80;
 //************填写推送内容****************
-var send_message = "我们的"+server_name+"好像又被墙了，嘤嘤嘤\n"+
+var send_message = "报告老板，我们的"+server_name+"好像又被墙了\n"+
 "机器名称: "+server_name+"    \n"+
 "机器编号: "+server_no+"   \n"+
 "机器CNAME: "+server_cname+"  \n"+
-"垂死病中惊坐起，起来继续换IP\n"+
+"洛阳亲友如相问，就说我在换IP\n"+
 "（POWER BY 良辰）\n";
 //定时器
 
@@ -67,7 +67,7 @@ function start_server() {
         })
 }
 function get_ip(callback){
-    get("https://ipinfo.io",function (res, status, headers) {
+    get("http://ipip.singular.vip/api",function (res, status, headers) {
         if (status==200) {
             console.log("get_ip:"+JSON.parse(res).ip)
             var data = JSON.parse(res).ip;
@@ -96,7 +96,7 @@ function sendMessage(groupid,message){
     });
 }
 function check_ip(num){
-    get("http://ipinfo.io",function (res, status, headers) {
+    get("http://ipip.singular.vip/api",function (res, status, headers) {
         if (status==200) {
             console.log("get_ip:"+JSON.parse(res).ip)
             var data = JSON.parse(res).ip;
