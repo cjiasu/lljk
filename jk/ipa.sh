@@ -44,8 +44,8 @@ echo -e "\033[32mTIP\033[0m No.$i Now \033[32m IP:$IP \033[0m"
 break
 fi
 
-dhclient -r -v
+dhclient -r etho
 rm -rf /var/lib/dhcp/*
-dhclient -v
+dhclient eth0
 
 done
