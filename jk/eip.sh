@@ -7,7 +7,8 @@ NIC=ens18
 ip=$(curl -ks -m 10 ip.sb)
 test=$(curl -ks -m 10 baidu.com | egrep -h "Empty|html")
 
-if [[ $test =~ "null" ]];then
+
+if [ ! -n "$test" ];then
 echo -e "\033[31mWARNING\033[0m $(date "+%Y-%m-%d %T") \033[31m IP:$ip \033[0m TCP block" 
 count=$count+1
 else
